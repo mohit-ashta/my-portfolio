@@ -130,7 +130,7 @@ const handleProject = () => {
                 height={50}
               />
             ) : (
-              <Image alt="logo" src="/logo.png" width={50} height={50} />
+              <Image alt="logo" src="/logo_white.png" width={50} height={50} />
             )}
           </Link>
 
