@@ -120,7 +120,7 @@ const handleProject = () => {
       )}
     >
       <div className="container mx-auto  sm:px-6 lg:px-0">
-        <div className="flex justify-between items-center h-[79px]">
+        <div className="flex justify-between items-center h-[79px] px-4 md:px-0">
           <Link href="/" className="flex items-center space-x-3 group">
             {isScrolled ? (
               <Image
@@ -154,7 +154,7 @@ const handleProject = () => {
           </div>
           <div className="flex items-center gap-5">
             <div
-              className={`flex items-center gap-1 text-center font-semibold ${
+              className={`md:flex items-center gap-1 text-center font-semibold hidden ${
                 isScrolled ? "text-muted-foreground" : "text-primary"
               } `}
             >
@@ -171,7 +171,7 @@ const handleProject = () => {
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -193,7 +193,7 @@ const handleProject = () => {
                     "block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200",
                     pathname === item.href
                       ? "text-primary"
-                      : "text-text-muted-foreground hover:text-primary"
+                      : "text-accent-foreground hover:text-primary"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
