@@ -155,16 +155,16 @@ const handleProject = () => {
           <div className="flex items-center gap-5">
             <div
               className={`flex items-center gap-1 text-center font-semibold ${
-                isScrolled ? "text-muted-foreground" : "text[#5a9e7c]"
+                isScrolled ? "text-muted-foreground" : "text-primary"
               } `}
             >
-              <Headset size={42} className="text-[#5a9e7c]" />
+              <Headset size={42} className="text-primary" />
               <div>
                 <span className="text-xs">Any Question?</span>
                 <h2 className="text-base">+9417385308</h2>
               </div>
             </div>
-            <Link href={"#contact"} className="px-4 py-2 bg-[#5a9e7c]  text-white  rounded-full transition-all duration-300 font-medium hover:shadow-[2px_2px_20px_0px_rgba(29,29,31,0.5)] cursor-pointer">
+            <Link href={"#contact"} className="px-4 py-2 bg-primary  text-white  rounded-full transition-all duration-300 font-medium hover:shadow-[2px_2px_20px_0px_rgba(29,29,31,0.5)] cursor-pointer">
            contact
             </Link>
             <ThemeToggle/>
@@ -192,17 +192,17 @@ const handleProject = () => {
                   className={cn(
                     "block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200",
                     pathname === item.href
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                      ? "text-primary"
+                      : "text-text-muted-foreground hover:text-primary"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium">
-                Get Started
-              </button>
+             <Link href={"#contact"} className="px-4 py-2 bg-[#5a9e7c]  text-white  rounded-full transition-all duration-300 font-medium hover:shadow-[2px_2px_20px_0px_rgba(29,29,31,0.5)] cursor-pointer">
+           contact
+            </Link>
             </div>
           </div>
         )}
