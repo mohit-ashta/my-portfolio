@@ -1,0 +1,266 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match the modern developer portfolio design brief */
+  --background: oklch(0.98 0 0); /* Light background */
+  --foreground: oklch(0.12 0.02 240); /* Dark text */
+  --card: oklch(0.95 0 0); /* Light card background */
+  --card-foreground: oklch(0.12 0.02 240); /* Dark text on cards */
+  --popover: oklch(0.98 0 0); /* Light popover background */
+  --popover-foreground: oklch(0.12 0.02 240); /* Dark popover text */
+  --primary: oklch(0.55 0.15 160); /* Vibrant cyan primary */
+  --primary-foreground: oklch(0.98 0 0); /* White text on primary */
+  --secondary: oklch(0.92 0 0); /* Light gray secondary */
+  --secondary-foreground: oklch(0.25 0 0); /* Dark text on secondary */
+  --muted: oklch(0.88 0 0); /* Muted dark gray */
+  --muted-foreground: oklch(0.45 0 0); /* Light gray muted text */
+  --accent: oklch(0.75 0.15 85); /* Warm yellow accent */
+  --accent-foreground: oklch(0.12 0.02 240); /* Dark text on accent */
+  --destructive: oklch(0.55 0.25 25); /* Red for errors */
+  --destructive-foreground: oklch(0.98 0 0); /* White on destructive */
+  --border: oklch(0.85 0 0); /* Light border */
+  --input: oklch(0.95 0 0); /* Light input background */
+  --ring: oklch(0.55 0.15 160); /* Cyan focus ring */
+  --chart-1: oklch(0.55 0.15 160); /* Cyan chart color */
+  --chart-2: oklch(0.75 0.15 85); /* Yellow chart color */
+  --chart-3: oklch(0.55 0.25 25); /* Red chart color */
+  --chart-4: oklch(0.45 0.02 240); /* Muted chart color */
+  --chart-5: oklch(0.12 0.02 240); /* Dark chart color */
+  --radius: 0.5rem; /* Mild border radius */
+  --sidebar: oklch(0.95 0 0); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.12 0.02 240); /* White sidebar text */
+  --sidebar-primary: oklch(0.55 0.15 160); /* Cyan sidebar primary */
+  --sidebar-primary-foreground: oklch(0.98 0 0); /* White on sidebar primary */
+  --sidebar-accent: oklch(0.75 0.15 85); /* Yellow sidebar accent */
+  --sidebar-accent-foreground: oklch(0.12 0.02 240); /* Dark on sidebar accent */
+  --sidebar-border: oklch(0.85 0 0); /* Dark sidebar border */
+  --sidebar-ring: oklch(0.55 0.15 160); /* Cyan sidebar ring */
+}
+
+.dark {
+  /* Dark mode uses the same tokens since this is a dark-first design */
+  --background: oklch(0.12 0.02 240); /* Dark navy background */
+  --foreground: oklch(0.98 0 0); /* Pure white text */
+  --card: oklch(0.18 0.02 240); /* Slightly lighter card background */
+  --card-foreground: oklch(0.98 0 0); /* White text on cards */
+  --popover: oklch(0.18 0.02 240); /* Dark popover background */
+  --popover-foreground: oklch(0.98 0 0); /* White popover text */
+  --primary: oklch(0.55 0.15 160); /* Emerald green #10b981 */
+  --primary-foreground: oklch(0.98 0 0); /* White text on primary */
+  --secondary: oklch(0.25 0.02 240); /* Dark secondary */
+  --secondary-foreground: oklch(0.98 0 0); /* White text on secondary */
+  --muted: oklch(0.25 0.02 240); /* Dark muted */
+  --muted-foreground: oklch(0.75 0 0); /* Light gray muted text */
+  --accent: oklch(0.75 0.15 85); /* Warm yellow accent */
+  --accent-foreground: oklch(0.12 0.02 240); /* Dark text on accent */
+  --destructive: oklch(0.55 0.25 25); /* Red for errors */
+  --destructive-foreground: oklch(0.98 0 0); /* White on destructive */
+  --border: oklch(0.25 0.02 240); /* Dark border */
+  --input: oklch(0.18 0.02 240); /* Dark input background */
+  --ring: oklch(0.55 0.15 160); /* Emerald focus ring */
+  --chart-1: oklch(0.55 0.15 160); /* Emerald chart color */
+  --chart-2: oklch(0.75 0.15 85); /* Yellow chart color */
+  --chart-3: oklch(0.55 0.25 25); /* Red chart color */
+  --chart-4: oklch(0.35 0.02 240); /* Muted chart color */
+  --chart-5: oklch(0.98 0 0); /* White chart color */
+  --sidebar: oklch(0.15 0.02 240);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.15 160);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.25 0.02 240);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.25 0.02 240);
+  --sidebar-ring: oklch(0.55 0.15 160);
+}
+
+@theme inline {
+  /* Updated font variables to use Inter and JetBrains Mono */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom animations and effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    border-color: transparent;
+  }
+  51%,
+  100% {
+    border-color: oklch(0.55 0.15 160);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40) 1s both, blink 1s step-end infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.55 0.15 160), oklch(0.75 0.15 85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  /* Updated glass effect for better contrast */
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+:root .glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stagger-animation > * {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.stagger-animation > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-animation > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-animation > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-animation > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-animation > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stagger-animation > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
